@@ -4,7 +4,7 @@ EVENTS = [
     {
         'name': '배틀그라운드 (소프트웨어융합대학)',
         'owner_id': 'esports_admin',
-        'banner_photo': None,
+        'banner_photo': '/uploads/battleground.png',
         'status': False,
         'participants': [
             {
@@ -175,7 +175,7 @@ EVENTS = [
     {
         'name': '리그오브레전드 (인문과학대학)',
         'owner_id': 'esports_admin',
-        'banner_photo': None,
+        'banner_photo': '/uploads/lol.png',
         'status': True,
         'participants': [
             {
@@ -387,7 +387,7 @@ EVENTS = [
     {
         'name': '오버워치 (자연과학대학)',
         'owner_id': 'esports_admin',
-        'banner_photo': None,
+        'banner_photo': '/uploads/overwatch.png',
         'status': True,
         'participants': [
             {
@@ -615,7 +615,7 @@ EVENTS = [
     {
         'name': '스타크래프트 (예체능대학)',
         'owner_id': 'esports_admin',
-        'banner_photo': None,
+        'banner_photo': '/uploads/starcraft.png',
         'status': True,
         'participants': [
             {
