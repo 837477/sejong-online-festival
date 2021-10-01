@@ -36,7 +36,7 @@ class Exhibition(Model):
                 'owner_id': 1,
                 'owner_name': 1,
                 'type': 1
-            })
+            }).sort([('__version__', -1)])
         )
 
     def find_one(self, oid: ObjectId):
@@ -61,4 +61,11 @@ class Exhibition(Model):
         self.col.update_one(
             {'_id': oid},
             {'$set': document}
+        )
+
+    def upsert_one(self, document: dict):
+        self.col.update_one(
+            {'name': document['name']},
+            {'$set': document},
+            upsert=True
         )

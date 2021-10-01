@@ -4,3 +4,4 @@ from .live_streaming import LIVE_STREAMING
 from .comment import COMMENTS
 from .esports import EVENTS
 from .main_logo import MAIN_LOGO
+from .exhibitions import EXHIBITIONS

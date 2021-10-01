@@ -14,7 +14,8 @@ from .user import User
 
 # initial_data
 from .initial_data import (
-    FESTIVAL_SCHEDULE, CELEBRITY_LINEUP, LIVE_STREAMING,COMMENTS,MAIN_LOGO,EVENTS
+    FESTIVAL_SCHEDULE, CELEBRITY_LINEUP, LIVE_STREAMING,COMMENTS,MAIN_LOGO,EVENTS,
+    EXHIBITIONS
 )
 
 MODELS = [
@@ -47,6 +48,7 @@ class ModelInitializer:
             self.init_admins(cur)
             self.init_main_view(cur)
             self.init_comment(cur)
+            self.init_exhibitions(cur)
 
     @staticmethod
     def init_index(cur: MongoClient):
@@ -87,5 +89,13 @@ class ModelInitializer:
     def init_comment(cur:MongoClient):
         comment=Comment(cur)
         comment.upsert_config(COMMENTS)
+
+    @staticmethod
+    def init_exhibitions(cur):
+        model = Exhibition(cur)
+        for exh in EXHIBITIONS:
+            model.upsert_one(exh)
+
+
 
 
