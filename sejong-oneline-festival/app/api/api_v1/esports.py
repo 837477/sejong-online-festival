@@ -146,9 +146,8 @@ def esports_v1_delete_team(
 @api.route('esports/events', methods=['GET'])
 @timer
 def esports_v1_get_all_events():
-    document = make_team_document(
-        Esports(g.db).find_all_event()
-    )
+    events = Esports(g.db).find_all_event()
+    document = [make_event_document(event) for event in events]
     return response_200(document)
 
 

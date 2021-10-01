@@ -29,6 +29,9 @@ class Esports(Model):
             '__version__': self.VERSION
         }
 
+    def insert_dummy(self, dummy_data):
+        self.col.insert_many(dummy_data)
+
     def insert_event(self, name: str, owner_id: str):
         return self.col.insert_one(self.schemize(
                 {'name': name, 'owner_id': owner_id}
