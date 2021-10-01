@@ -29,6 +29,9 @@ class Esports(Model):
             '__version__': self.VERSION
         }
 
+    def insert_dummy(self, dummy_data):
+        self.col.insert_many(dummy_data)
+
     def insert_event(self, name: str, owner_id: str):
         return self.col.insert_one(self.schemize(
                 {'name': name, 'owner_id': owner_id}
@@ -38,7 +41,7 @@ class Esports(Model):
     def update_event(self, event_id: ObjectId, field_obj: dict):
         self.col.update_one(
             {'_id': event_id},
-            {field_obj}
+            {'$set': field_obj}
         )
 
     def delete_event(self, event_id: ObjectId, owner_id: str):
