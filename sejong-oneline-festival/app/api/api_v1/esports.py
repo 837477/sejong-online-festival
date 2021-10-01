@@ -2,13 +2,14 @@
 Esports API
 이스포츠 이벤트 관련 API
 """
+import os
 from flask_validation_extended import Validator, ValidationRule
 from flask_validation_extended import File, Ext, Min, Form, MaxFileCount
 from flask_validation_extended import Query, Route, Json, List, Dict
 from app.api.validation import ObjectIdValid
 from bson.objectid import ObjectId
 from datetime import datetime
-from flask import g
+from flask import g, current_app
 from app.api import response_200, response_201, bad_request, forbidden
 from app.api.api_v1 import api_v1 as api
 from app.api.decorator import login_required, timer
@@ -48,10 +49,10 @@ def esports_v1_insert_banner(
     )
 ):
     event = Esports(g.db).find_event(ObjectId(event_id))
-    if exhibition['owner_id'] != g.user_id:
+    if event['owner_id'] != g.user_id:
         return forbidden("You are not owner.")
-    filename = make_filename(photo[0].filename)
-    banner_photo.save(
+    filename = make_filename(banner_photo[0].filename)
+    banner_photo[0].save(
         os.path.join(
             current_app.config['PHOTO_UPLOAD_PATH'],
             filename

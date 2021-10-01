@@ -38,7 +38,7 @@ class Esports(Model):
     def update_event(self, event_id: ObjectId, field_obj: dict):
         self.col.update_one(
             {'_id': event_id},
-            {field_obj}
+            {'$set': field_obj}
         )
 
     def delete_event(self, event_id: ObjectId, owner_id: str):
