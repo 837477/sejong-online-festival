@@ -13,8 +13,7 @@ __세종대학교 비대면 축제 서비스 플랫폼 - ONLINE__
 ![image](https://user-images.githubusercontent.com/47492535/144883307-330c52d1-cdad-4f27-b141-46f874f46ae1.png)
 ![image](https://user-images.githubusercontent.com/47492535/144883339-10a81699-b2a4-45c8-9a29-081a7bea41d1.png)
 ![image](https://user-images.githubusercontent.com/47492535/144883382-8cfd31d6-3824-4ff9-8152-c13da11347fe.png)
-
-<br /><br />
+<br />
 
 ## Dependency
 
