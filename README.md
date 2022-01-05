@@ -1,5 +1,6 @@
 # SOF(Sejong-Online-Festival) 
-__세종대학교 비대면 축제 서비스 플랫폼 - ONLINE__
+__세종대학교 비대면 축제 서비스 플랫폼 - ONLINE__ <br>
+__Front-End Repo: [Here](https://github.com/altmshfkgudtjr/sejong-online-festival)__
 <br /><br />
 
 <div align=center>
